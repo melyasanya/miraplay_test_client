@@ -1,0 +1,116 @@
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background: #181818;
+
+  transform: translateX(0);
+  transition: all 0.4s ease-in;
+}
+
+.btnPanel {
+  width: 100%;
+  min-height: 75px;
+  display: flex;
+  justify-content: center;
+  gap: 47px;
+  border-bottom: 1px solid #454545;
+}
+.btn {
+  background-color: transparent;
+  color: #eaeaea;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 133%;
+  padding-top: 10px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btnActive {
+  position: relative;
+}
+.btnActive::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #3f9c14;
+}
+
+.form {
+  margin-top: 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  justify-content: center;
+}
+
+.label {
+  position: relative;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #eaeaea;
+  text-transform: uppercase;
+}
+.input {
+  width: 370px;
+  background: #1c1c1c;
+  border: 1px solid #454545;
+  border-radius: 10px;
+  height: 70px;
+  margin-bottom: 40px;
+  padding: 0px 20px;
+  color: #eaeaea;
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 14px;
+}
+
+.input::placeholder {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+
+  text-transform: uppercase;
+
+  color: #9c9c9c;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 50px #d3e3d3 inset !important;
+  border: none !important;
+}
+.input:focus {
+  border: 1px solid #3f9c14;
+  outline: none;
+}
+.input:active {
+  border: 1px solid #3f9c14;
+  outline: none;
+}
+
+.submitBtn {
+  width: 100%;
+  height: 50px;
+  margin-top: 25px;
+  background: #3f9c14;
+  box-shadow: 0px 20px 40px rgba(63, 156, 20, 0.3);
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 143%;
+  cursor: pointer;
+  border: none;
+  color: #eaeaea;
+  transition: all 200ms ease-in-out;
+}

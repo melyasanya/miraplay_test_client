@@ -1,0 +1,32 @@
+.iconsWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 40px;
+}
+
+.btn {
+  width: 56px;
+  height: 56px;
+
+  background: #3f9c14;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #1d5304;
+}
+
+.icon {
+  fill: rgb(255, 255, 255);
+  width: 15px;
+  height: 15px;
+}

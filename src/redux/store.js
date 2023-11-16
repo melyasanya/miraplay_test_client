@@ -23,7 +23,7 @@ const persistedGamesReducer = persistReducer(persistConfig, gamesReducer);
 
 export const store = configureStore({
   reducer: {
-    tasks: persistedGamesReducer,
+    games: persistedGamesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
