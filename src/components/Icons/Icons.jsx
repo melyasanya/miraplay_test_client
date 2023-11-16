@@ -11,7 +11,7 @@ export const Icons = () => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(changeToken);
+    dispatch(changeToken());
   };
 
   return (

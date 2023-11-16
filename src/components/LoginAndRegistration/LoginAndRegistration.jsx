@@ -1,8 +1,10 @@
 import axios from "axios";
+import { Notify } from "notiflix";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useDispatch } from "react-redux";
+import { changeToken } from "../../redux/Games/GamesSlice";
 import css from "./LoginAndRegistration.module.css";
 
 const registerUser = (data) => {
@@ -12,11 +14,36 @@ const registerUser = (data) => {
   );
 };
 
+const login = (data) => {
+  return axios.post(
+    "https://miraplay-test-server-ppli.onrender.com/api/users/login",
+    data
+  );
+};
+
 export const LoginAndRegistration = () => {
   const [toRegister, setToRegister] = useState(true);
   const dispatch = useDispatch();
 
-  const mutation = useMutation(registerUser);
+  const mutation = useMutation(registerUser, {
+    onError: (error) => {
+      Notify.failure(error.response.data.message);
+    },
+    onSuccess: () => {
+      Notify.success("Акаунт успішно зареєстрований");
+      reset();
+    },
+  });
+
+  const loginMutation = useMutation(login, {
+    onError: (error) => {
+      Notify.failure(error.response.data.message);
+    },
+    onSuccess: (data) => {
+      dispatch(changeToken(data.data.token));
+      console.log(data.data.token);
+    },
+  });
 
   const {
     register,
@@ -34,7 +61,12 @@ export const LoginAndRegistration = () => {
   };
 
   const onSubmit = (data) => {
-    mutation.mutate(data);
+    if (toRegister) {
+      mutation.mutate(data);
+    } else {
+      loginMutation.mutate(data);
+    }
+
     console.log(data);
   };
 
