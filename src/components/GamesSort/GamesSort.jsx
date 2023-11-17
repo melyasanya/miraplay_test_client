@@ -1,10 +1,24 @@
-import { useState } from "react";
 import { sortingList } from "../../helpers/SortingList";
 import css from "./GamesSort.module.css";
 
-export const GamesSort = ({ selectedGenre, setSelectedGenre }) => {
-  const changeGenre = (genre) => {
-    setSelectedGenre(genre);
+export const GamesSort = ({
+  selectedGenre,
+  setSelectedGenre,
+  setPage,
+  mutation,
+  setFreshFirst,
+  freshFirst,
+}) => {
+  const changeGenre = async (genre) => {
+    await setSelectedGenre(genre);
+    await setPage(1);
+    await setFreshFirst(true);
+    mutation();
+  };
+
+  const onSort = async (e) => {
+    await setFreshFirst(JSON.parse(e.target.value.toLowerCase()));
+    mutation();
   };
 
   return (
@@ -27,6 +41,11 @@ export const GamesSort = ({ selectedGenre, setSelectedGenre }) => {
           );
         })}
       </ul>
+      <p className={css.sort}>Сортувати</p>
+      <select name="sort" value={freshFirst} onChange={onSort}>
+        <option value="true">Спочатку нові</option>
+        <option value="false">Спочатку старі</option>
+      </select>
     </div>
   );
 };

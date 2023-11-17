@@ -1,7 +1,9 @@
 .genresList {
   display: flex;
+  justify-content: space-between;
   margin-top: 40px;
   gap: 10px;
+  padding: 0px;
   /* overflow-y: auto;
   padding-bottom: 10px; */
 }
@@ -26,4 +28,12 @@
 
 .selected {
   background-color: #3f9c14;
+}
+
+.sort {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 143%;
+  text-align: center;
+  color: #afafaf;
 }

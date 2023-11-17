@@ -1,0 +1,87 @@
+.item {
+  position: relative;
+  width: 368px;
+  height: 565px;
+  background: #1c1c1c;
+  border: 1px solid #454545;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.3s ease-in;
+  opacity: 1;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 335px;
+  min-height: 335px;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.bottom {
+  max-width: 368px;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.gameName {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 36px;
+  color: #eaeaea;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gameDescr {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  height: 72px;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: #afafaf;
+  text-align: left;
+  overflow: hidden;
+}
+
+.genre {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  gap: 8px;
+  display: flex;
+}
+.genreItem {
+  padding: 5px 10px;
+
+  background: rgba(12, 5, 32, 0.25);
+  backdrop-filter: blur(10px);
+  color: #eaeaea;
+  border-radius: 10px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.genreTop {
+  padding: 5px 10px;
+  background: #3f9c14;
+  color: #eaeaea;
+
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}

@@ -4,7 +4,7 @@ export const sortingList = [
   "MOBA",
   "SHOOTERS",
   "LAUNCHERS",
-  "MMORGP",
+  "MMORPG",
   "STRATEGY",
   "FIGHTING",
   "RACING",

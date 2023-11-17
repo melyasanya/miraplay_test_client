@@ -1,0 +1,15 @@
+.gamesList {
+  margin-top: 65px;
+  margin-top: 65px;
+
+  width: 100%;
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+}

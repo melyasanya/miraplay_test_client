@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useDispatch } from "react-redux";
 import { changeToken } from "../../redux/Games/GamesSlice";
+import { Loader } from "../Loader/Loader";
 import css from "./LoginAndRegistration.module.css";
 
 const registerUser = (data) => {
@@ -41,7 +42,6 @@ export const LoginAndRegistration = () => {
     },
     onSuccess: (data) => {
       dispatch(changeToken(data.data.token));
-      console.log(data.data.token);
     },
   });
 
@@ -66,12 +66,12 @@ export const LoginAndRegistration = () => {
     } else {
       loginMutation.mutate(data);
     }
-
-    console.log(data);
   };
 
   return (
     <div className={css.content}>
+      {mutation.isLoading && <Loader />}
+      {loginMutation.isLoading && <Loader />}
       <div className={css.btnPanel}>
         <button
           className={!toRegister ? `${css.btn} ${css.btnActive}` : css.btn}
