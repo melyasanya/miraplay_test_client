@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import css from "./GameCard.module.css";
 
 export const GameCard = ({
@@ -20,4 +22,12 @@ export const GameCard = ({
       </div>
     </li>
   );
+};
+
+GameCard.propTypes = {
+  gameImage: PropTypes.string,
+  commonGameName: PropTypes.string,
+  gameDescription: PropTypes.string,
+  genre: PropTypes.string,
+  inTop: PropTypes.bool,
 };

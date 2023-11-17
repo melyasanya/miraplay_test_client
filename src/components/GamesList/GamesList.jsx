@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
+
 import { getGames } from "../../redux/Games/GamesSelectors";
 import { GameCard } from "../GameCard/GameCard";
+
 import css from "./GamesList.module.css";
 
 export const GamesList = () => {

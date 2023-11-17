@@ -4,8 +4,6 @@
   margin-top: 40px;
   gap: 10px;
   padding: 0px;
-  /* overflow-y: auto;
-  padding-bottom: 10px; */
 }
 
 .genresItem {
@@ -22,8 +20,11 @@
   cursor: pointer;
   background: #242424;
   border: 1px solid #454545;
-  backdrop-filter: blur(10px);
   border-radius: 10px;
+}
+
+.genresItem:hover {
+  background-color: #1d5304;
 }
 
 .selected {
@@ -36,4 +37,10 @@
   line-height: 143%;
   text-align: center;
   color: #afafaf;
+}
+
+.sortCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

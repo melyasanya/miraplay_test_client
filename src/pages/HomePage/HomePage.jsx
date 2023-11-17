@@ -1,4 +1,5 @@
 import { LoginAndRegistration } from "../../components/LoginAndRegistration/LoginAndRegistration";
+
 import css from "./HomePage.module.css";
 
 export const HomePage = () => {

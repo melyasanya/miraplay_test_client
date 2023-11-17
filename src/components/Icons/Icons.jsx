@@ -3,8 +3,9 @@ import { ImUser } from "react-icons/im";
 import { IoIosLogOut } from "react-icons/io";
 
 import { getIsLogged } from "../../redux/Games/GamesSelectors";
-import css from "./Icons.module.css";
 import { changeToken } from "../../redux/Games/GamesSlice";
+
+import css from "./Icons.module.css";
 
 export const Icons = () => {
   const token = useSelector(getIsLogged);

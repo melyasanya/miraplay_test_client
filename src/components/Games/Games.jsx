@@ -1,36 +1,32 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useMutation } from "react-query";
 import { useDispatch, useSelector } from "react-redux";
+
+import { getGames } from "../../helpers/mutationFuncs";
 import { getLength } from "../../redux/Games/GamesSelectors";
 import { addGames, changeArrayLength } from "../../redux/Games/GamesSlice";
 import { GamesList } from "../GamesList/GamesList";
 import { GamesSort } from "../GamesSort/GamesSort";
 import { Loader } from "../Loader/Loader";
+
 import css from "./Games.module.css";
 
 export const Games = () => {
+  const dispatch = useDispatch();
+  const gamesLength = useSelector(getLength);
   const [selectedGenre, setSelectedGenre] = useState("ALL");
   const [page, setPage] = useState(1);
   const [freshFirst, setFreshFirst] = useState(true);
-  const dispatch = useDispatch();
-  const gamesLength = useSelector(getLength);
 
-  const getGames = () => {
-    return axios.post("https://api.miraplay.cloud/games/by_page", {
-      page,
-      isFreshGamesFirst: freshFirst,
-      genre: selectedGenre === "ALL" ? false : `${selectedGenre}`,
-      gamesToShow: 9,
-    });
-  };
-
-  const mutation = useMutation(getGames, {
-    onSuccess: (data) => {
-      dispatch(addGames(data.data.games));
-      dispatch(changeArrayLength(data.data.gamesListLength));
-    },
-  });
+  const mutation = useMutation(
+    () => getGames(page, freshFirst, selectedGenre),
+    {
+      onSuccess: (data) => {
+        dispatch(addGames(data.data.games));
+        dispatch(changeArrayLength(data.data.gamesListLength));
+      },
+    }
+  );
 
   useEffect(() => {
     mutation.mutate();

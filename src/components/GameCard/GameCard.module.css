@@ -5,16 +5,10 @@
   background: #1c1c1c;
   border: 1px solid #454545;
   border-radius: 20px;
-  cursor: pointer;
-  outline: none;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  transition: all 0.3s ease-in;
-  opacity: 1;
-  margin: 0 auto;
-  overflow: hidden;
 }
 
 .cardImage {
@@ -23,7 +17,6 @@
   min-height: 335px;
   border-radius: 20px 20px 0 0;
   object-fit: cover;
-  object-position: center;
 }
 
 .bottom {
@@ -67,7 +60,6 @@
 }
 .genreItem {
   padding: 5px 10px;
-
   background: rgba(12, 5, 32, 0.25);
   backdrop-filter: blur(10px);
   color: #eaeaea;
@@ -80,7 +72,6 @@
   padding: 5px 10px;
   background: #3f9c14;
   color: #eaeaea;
-
   border-radius: 10px;
   display: flex;
   align-items: center;

@@ -6,22 +6,17 @@
   align-items: center;
 }
 .navigationItem {
-  position: relative;
   font-weight: 300;
   margin-right: 32px;
   color: #afafaf;
-  cursor: pointer;
   display: flex;
   align-items: center;
-  height: 30px;
-  overflow: hidden;
 }
 
 .title {
   font-weight: inherit;
   font-size: 14px;
   line-height: 20px;
-  white-space: nowrap;
   color: #afafaf;
   text-align: center;
 }

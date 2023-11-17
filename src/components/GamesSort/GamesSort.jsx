@@ -1,4 +1,7 @@
+import PropTypes from "prop-types";
+
 import { sortingList } from "../../helpers/SortingList";
+
 import css from "./GamesSort.module.css";
 
 export const GamesSort = ({
@@ -22,7 +25,7 @@ export const GamesSort = ({
   };
 
   return (
-    <div>
+    <div className={css.sortCont}>
       <ul className={css.genresList}>
         {sortingList.map((el, i) => {
           return (
@@ -48,4 +51,13 @@ export const GamesSort = ({
       </select>
     </div>
   );
+};
+
+GamesSort.propTypes = {
+  selectedGenre: PropTypes.string.isRequired,
+  setSelectedGenre: PropTypes.func.isRequired,
+  setPage: PropTypes.func.isRequired,
+  mutation: PropTypes.func.isRequired,
+  setFreshFirst: PropTypes.func.isRequired,
+  freshFirst: PropTypes.bool.isRequired,
 };

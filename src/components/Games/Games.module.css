@@ -14,21 +14,17 @@
   margin-top: 41px;
   background-color: #242424;
   border: 1px solid #454545;
-
   border-radius: 20px;
-
   font-weight: 800;
   font-size: 14px;
   line-height: 143%;
   text-align: center;
   text-transform: uppercase;
-
   color: #eaeaea;
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .btnMore:hover {
-  transition: all 0.2s ease;
   background-color: #3f9c14;
 }
