@@ -17,8 +17,11 @@ const gamesSlice = createSlice({
         state.token = "";
       }
     },
+    addGames(state, action) {
+      state.games = action.payload;
+    },
   },
 });
 
 export const gamesReducer = gamesSlice.reducer;
-export const { changeToken } = gamesSlice.actions;
+export const { changeToken, addGames } = gamesSlice.actions;

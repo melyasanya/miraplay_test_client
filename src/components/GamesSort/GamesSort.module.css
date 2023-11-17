@@ -1,0 +1,29 @@
+.genresList {
+  display: flex;
+  margin-top: 40px;
+  gap: 10px;
+  /* overflow-y: auto;
+  padding-bottom: 10px; */
+}
+
+.genresItem {
+  padding: 0 15px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 143%;
+  color: #eaeaea;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #242424;
+  border: 1px solid #454545;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+.selected {
+  background-color: #3f9c14;
+}
